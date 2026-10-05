@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PRODIGY_FS_04 — Real-Time Chat</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+ 
+  <!-- Screen 1: enter username & room -->
+  <div id="join-screen">
+    <h1>Join the Chat</h1>
+    <input id="username-input" placeholder="Enter your username" />
+    <select id="room-select">
+      <option value="General">General</option>
+      <option value="Random">Random</option>
+      <option value="Tech Talk">Tech Talk</option>
+    </select>
+    <button id="join-btn">Join</button>
+  </div>
+ 
+  <!-- Screen 2: the actual chat UI, hidden until user joins -->
+  <div id="chat-screen" class="hidden">
+    <aside id="sidebar">
+      <h3>Online Users</h3>
+      <ul id="user-list"></ul>
+    </aside>
+ 
+    <main id="chat-main">
+      <div id="chat-header"></div>
+      <div id="messages"></div>
+      <div id="typing-indicator"></div>
+ 
+      <form id="message-form">
+        <input id="message-input" placeholder="Type a message..." autocomplete="off" />
+        <input type="file" id="image-input" accept="image/*" />
+        <button type="submit">Send</button>
+      </form>
+    </main>
+  </div>
+ 
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
